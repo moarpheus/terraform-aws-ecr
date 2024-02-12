@@ -1,3 +1,20 @@
+# terraform-aws-ecr
+Terraform module to manage ECR repositories
+
+## Description
+This module creates default ECR repository with encryption and option to add principal arns to the access policy
+
+### Usage
+
+```
+module "ecr" {
+  source                    = "git::ssh://git@github.com:moarpheus/terraform-aws-ecr.git?ref=master"
+  additional_principal_arns = "arn:aws:iam::123456789012:root"
+  kms_key_arn               = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+  image_tag_mutability      = "MUTABLE"
+}
+```
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Providers
 

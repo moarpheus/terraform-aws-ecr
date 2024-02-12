@@ -31,7 +31,7 @@ variable "image_tag_mutability" {
   default     = "IMMUTABLE"
 
   validation {
-    condition     = contains(["AES256", "KMS"], var.encryption_type)
+    condition     = contains(["MUTABLE", "IMMUTABLE"], var.encryption_type)
     error_message = "Allowed values for input_parameter are \"MUTABLE\" or \"IMMUTABLE\"."
   }
 }
